@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f2ea;
+    background-image: url('../Art/Sky.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    min-height: 100vh;
+}
