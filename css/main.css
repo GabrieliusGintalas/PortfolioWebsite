@@ -1,11 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f4f2ea;
-    background-image: url('../Art/Sky.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
+    background-color: #000000;
     min-height: 100vh;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
