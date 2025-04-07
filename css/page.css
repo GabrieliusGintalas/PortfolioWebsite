@@ -1,9 +1,9 @@
 .page-container {
     position: absolute;
-    top: 500px;
-    left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
+    top: 50%;
+    left: 50%;
 }
 
 .text-title {
@@ -28,4 +28,44 @@
 
 .column.right {
     text-align: left;
+}
+
+.resume-page-container {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+.resume-container {
+    width: 50vw;
+    max-width: 800px;
+    height: 100vh;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.resume-pdf {
+    width: 100%;
+    height: 100%;
+}
+
+.download-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 0px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: rgba(50, 50, 50, 0.8);
 }
