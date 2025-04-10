@@ -1,14 +1,16 @@
 .page-container {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    top: 50%;
-    left: 50%;
+    margin: 100px;
+    padding: 50px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .text-title {
     font-size: 3vw;
-    margin-bottom: 40px;
     text-align: center;
 }
 
@@ -32,23 +34,24 @@
 
 .resume-page-container {
     width: 100%;
-    height: 100vh;
+    max-width: 1000px;
     margin: 0 auto;
-    margin-top: 90px;
 }
 
 .resume-container {
-    width: 50vw;
+    width: 100%;
     max-width: 800px;
-    height: 100vh;
     margin: 0 auto;
-    margin-top: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.resume-pdf {
+.resume-image {
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    image-rendering: auto; /* Default rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .download-container {
@@ -68,4 +71,17 @@
 
 .download-button:hover {
     background-color: rgba(50, 50, 50, 0.8);
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 768px) {
+    .resume-page-container {
+        padding-top: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-page-container {
+        padding: 60px 5px 10px;
+    }
 }
