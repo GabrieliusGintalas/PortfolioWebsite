@@ -1,0 +1,42 @@
+.resume-page-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.aboutmetext{
+    font-size: 18px;
+}
+
+.resume-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.resume-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    image-rendering: auto; /* Default rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.download-container {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 0px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: rgba(50, 50, 50, 0.8);
+}

@@ -1,9 +1,72 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #000000;
+body, html  {
+    margin: 10px;
+    padding: 10px;
     min-height: 100vh;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+    font-family: 'Pixelated';
+    src: url('../Fonts/Jersey10-Regular.ttf') format('truetype');
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'Pixelated';
+    src: url('../Fonts/Jersey10-Regular.ttf') format('truetype');
+}
+
+h1 {
+    font-weight: 400;
+}
+
+p {
+    font-weight: 200;
+    font-size: 1vw;
+}
+
+.text-title, .text-common, .titleName, .titleQuip, .info-item, .skills-table th, .skills-table td, .aboutmetext {
+    font-family: 'Pixelated', Courier, monospace;
+    color: rgb(234, 229, 219);
+}
+
+.text-common, .info-item {
+    font-size: 1.5vw;
+}
+
+.text-title {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.text-common {
+    font-size: 2vw;
+}
+
+.titleHolder {  
+    width: 50%; 
+    display: flex;
+    align-items: center;
+}
+
+.titleName, .titleQuip {
+    line-height: 0.75;
+    text-align: left; 
+}
+
+.titleName {
+    font-size: 2vw;
+}
+
+.titleQuip {
+    font-size: 3vw;
+}
+
+.aboutme-container{
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    display: block;
+    max-width: 800px;
 }
