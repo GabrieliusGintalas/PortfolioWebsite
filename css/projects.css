@@ -1,0 +1,228 @@
+.page-container {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.page-container .text-title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.projects-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    min-height: 300px;
+    width: 100%;
+    text-align: left;
+}
+
+.project-card {
+    grid-template-areas: "details images";
+}
+
+.project-images {
+    grid-area: images;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.project-image-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    image-rendering: auto;
+}
+
+.project-image:hover {
+    transform: scale(1.03);
+}
+
+.project-details {
+    grid-area: details;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.project-name {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+    word-break: break-word;
+}
+
+.project-description {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #ccc;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgba(50, 50, 80, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    max-width: 150px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.project-link:hover {
+    background-color: rgba(70, 70, 120, 0.8);
+}
+
+/* New section for work contributions */
+.project-contributions {
+    margin-bottom: 20px;
+}
+
+.contributions-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.contributions-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.contributions-list li {
+    color: #ccc;
+    padding: 3px 0;
+    line-height: 1.4;
+}
+
+.project-tech {
+    margin-top: auto;
+    width: 100%;
+}
+
+.tech-section {
+    margin-bottom: 15px;
+}
+
+.tech-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.tech-item {
+    background-color: rgba(30, 30, 40, 0.7);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #ddd;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 992px) {
+    .project-card {
+        grid-template-columns: 45% 55%;
+    }
+    
+    .project-details {
+        padding: 20px;
+    }
+    
+    .project-name {
+        font-size: 22px;
+    }
+    
+    .project-description {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card.image-left {
+        grid-template-areas: 
+            "images"
+            "details";
+    }
+    
+    .project-card.image-right {
+        grid-template-areas: 
+            "images"
+            "details";
+    }
+    
+    .project-images {
+        padding: 15px 15px 0 15px;
+    }
+    
+    .project-details {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-container {
+        width: 95%;
+    }
+    
+    .project-name {
+        font-size: 20px;
+    }
+    
+    .project-description {
+        font-size: 14px;
+    }
+    
+    .tech-item {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+}

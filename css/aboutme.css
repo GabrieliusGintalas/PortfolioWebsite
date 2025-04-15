@@ -1,25 +1,48 @@
+.aboutme-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
 .resume-page-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .aboutmetext{
-    font-size: 18px;
+    font-size: 24px;
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
 }
 
 .resume-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .resume-image {
     width: 100%;
+    max-width: 1450px;
     height: auto;
     display: block;
     border: 1px solid rgba(255, 255, 255, 0.2);
     image-rendering: auto; /* Default rendering */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .download-container {
@@ -39,4 +62,8 @@
 
 .download-button:hover {
     background-color: rgba(50, 50, 50, 0.8);
+}
+
+.download-text {
+    font-size: 24px;
 }
