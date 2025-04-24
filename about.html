@@ -9,6 +9,26 @@
     <link rel="stylesheet" href="css/aboutme.css">
     <link rel="stylesheet" href="css/art.css">
     <script src="GabeScript.js"></script>
+    <script>
+        function downloadResume() {
+            // Create an invisible anchor element
+            const link = document.createElement('a');
+            link.href = 'Images/GabrieliusGintalasResume.pdf';
+            link.download = 'GabrieliusGintalasResume.pdf';
+            link.target = '_blank';
+            
+            // Append to the document
+            document.body.appendChild(link);
+            
+            // Trigger click
+            link.click();
+            
+            // Clean up
+            document.body.removeChild(link);
+            
+            return false; // Prevent default
+        }
+    </script>
 </head>
 <body>
     <!-- Dark mode elements -->
@@ -72,11 +92,11 @@
                 <div class="text-title">Resume</div>
                 
                 <div class="resume-container">
-                    <img src="./Images/GabrieliusGintalasResume.png" class="resume-image"></img>
+                    <img src="Images/GabrieliusGintalasResume.png" class="resume-image">
                 </div>
                 
                 <div class="download-container">
-                    <a href="./Images/GabrieliusGintalasResume.pdf" download class="download-button">
+                    <a href="javascript:void(0)" onclick="downloadResume()" class="download-button">
                         <p class="download-text">Download</p></a>
                 </div>
             </div>
