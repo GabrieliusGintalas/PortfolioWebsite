@@ -11,21 +11,37 @@
     <script src="GabeScript.js"></script>
 </head>
 <body>
-    <div class="art-background">
-        <div class="background-image">
-            <img src="../Art/Sky.png" alt="Sky">
-        </div>
-        <div class="light-source">
-            <img src="../Art/Moon.png" alt="Moon">
-        </div>
-        <div class="stars">
-            <img src="../Art/Stars.png" alt="Stars">
-        </div>
-        <div class="mountains">
-            <img src="../Art/Mountains.png" alt="Mountains">
-        </div>
+    <!-- Dark mode elements -->
+    <div class="background dark-mode" style="z-index: 0;">
+        <img src="Art/DarkMode/BackgroundDark.png" alt="Dark Background">
     </div>
-    <img src="../Art/Gabe/StandingGabe.png" alt="Gabe" class="character" id="gabe">
+    <div class="sky dark-mode" style="z-index: 1;">
+        <img src="Art/DarkMode/SkyDark.png" alt="Dark Sky">
+    </div>
+    <div class="terrain dark-mode" style="z-index: 2;">
+        <img src="Art/DarkMode/TerrainDark.png" alt="Dark Terrain">
+    </div>
+    
+    <!-- Light mode elements (initially hidden) -->
+    <div class="background light-mode" style="z-index: 0; display: none;">
+        <img src="Art/LightMode/BackgroundLight.png" alt="Light Background">
+    </div>
+    <div class="sky light-mode" style="z-index: 1; display: none;">
+        <img src="Art/LightMode/SkyLight.png" alt="Light Sky">
+    </div>
+    <div class="terrain light-mode" style="z-index: 2; display: none;">
+        <img src="Art/LightMode/TerrainLight.png" alt="Light Terrain">
+    </div>
+    
+    <!-- Decorative celestial objects - match sky display pattern -->
+    <div class="celestial-object moon" style="z-index: 1;">
+        <img src="Art/DarkMode/Moon.png" alt="Moon">
+    </div>
+    <div class="celestial-object sun" style="z-index: 1; display: none;">
+        <img src="Art/LightMode/Sun.png" alt="Sun">
+    </div>
+    <img src="Art/Gabe/StandingGabe.png" alt="Gabe" class="character" id="gabe">
+
     <nav class="navbar">
         <nav class="nav-home">
             <a href="index.html">GG</a>
@@ -36,8 +52,13 @@
             <li><a href="skills.html">Skills</a></li>
             <li><a href="contact.html">Contact Me</a></li>
         </ul>
+        <!-- Mode toggle button integrated into navbar -->
+        <div class="mode-toggle dark">
+            <img id="mode-icon" src="Art/DarkMode/Moon.png" alt="Mode Toggle">
+        </div>
     </nav>
-        <div class="aboutme-container">
+    
+        <div class="aboutme-container" style="position: relative; z-index: 20; margin-top: 100px;">
             <div class="text-title">About Me</div>
             <div class="aboutmetext">Name: Gabrielius 'Gabe' Gintalas</div>
             <div class="aboutmetext">Location: Santa Monica, CA</div>

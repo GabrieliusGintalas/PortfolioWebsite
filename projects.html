@@ -12,20 +12,36 @@
     <script src="GabeScript.js"></script>
 </head>
 <body>
-    <div class="art-background">
-        <div class="background-image">
-            <img src="../Art/Sky.png" alt="Sky">
-        </div>
-        <div class="light-source">
-            <img src="../Art/Moon.png" alt="Moon">
-        </div>
-        <div class="stars">
-            <img src="../Art/Stars.png" alt="Stars">
-        </div>
-        <div class="mountains">
-            <img src="../Art/Mountains.png" alt="Mountains">
-        </div>
+    <!-- Dark mode elements -->
+    <div class="background dark-mode" style="z-index: 0;">
+        <img src="Art/DarkMode/BackgroundDark.png" alt="Dark Background">
     </div>
+    <div class="sky dark-mode" style="z-index: 1;">
+        <img src="Art/DarkMode/SkyDark.png" alt="Dark Sky">
+    </div>
+    <div class="terrain dark-mode" style="z-index: 2;">
+        <img src="Art/DarkMode/TerrainDark.png" alt="Dark Terrain">
+    </div>
+    
+    <!-- Light mode elements (initially hidden) -->
+    <div class="background light-mode" style="z-index: 0; display: none;">
+        <img src="Art/LightMode/BackgroundLight.png" alt="Light Background">
+    </div>
+    <div class="sky light-mode" style="z-index: 1; display: none;">
+        <img src="Art/LightMode/SkyLight.png" alt="Light Sky">
+    </div>
+    <div class="terrain light-mode" style="z-index: 2; display: none;">
+        <img src="Art/LightMode/TerrainLight.png" alt="Light Terrain">
+    </div>
+    
+    <!-- Decorative celestial objects - match sky display pattern -->
+    <div class="celestial-object moon" style="z-index: 1;">
+        <img src="Art/DarkMode/Moon.png" alt="Moon">
+    </div>
+    <div class="celestial-object sun" style="z-index: 1; display: none;">
+        <img src="Art/LightMode/Sun.png" alt="Sun">
+    </div>
+    <img src="Art/Gabe/StandingGabe.png" alt="Gabe" class="character" id="gabe">
     <nav class="navbar">
         <nav class="nav-home">
             <a href="index.html">GG</a>
@@ -36,16 +52,20 @@
             <li><a href="skills.html">Skills</a></li>
             <li><a href="contact.html">Contact Me</a></li>
         </ul>
+        <!-- Mode toggle button integrated into navbar -->
+        <div class="mode-toggle dark">
+            <img id="mode-icon" src="Art/DarkMode/Moon.png" alt="Mode Toggle">
+        </div>
     </nav>
 
-    <div class="page-container">
+    <div class="page-container" style="position: relative; z-index: 20; margin-top: 100px;">
         <div class="text-title">Projects</div>
         
         <div class="projects-container">
             <div class="project-card">
                 <div class="project-images">
                     <div class="project-image-container">
-                        <img src="../Images/Cove/Cove1.jpg" alt="Cove 1 Screenshot" class="project-image">
+                        <img src="Images/Cove/Cove1.jpg" alt="Cove 1 Screenshot" class="project-image">
                     </div>
                 </div>
                 <div class="project-details">
@@ -62,6 +82,13 @@
                             <li>Currently still working on a brand new feature for the app which will allow users to 
                                 customizer their island.
                             </li>  
+                        </ul>
+                    </div>
+
+                    <div class="project-contributions">
+                        <div class="contributions-title">Challenges Faced:</div>
+                        <ul class="contributions-list">
+                            <li>Updating data live on the app through Firebase updated/modifications</li>
                         </ul>
                     </div>
 
@@ -92,13 +119,13 @@
             <div class="project-card">
                 <div class="project-images">
                     <div class="project-image-container">
-                        <img src="../Images/SpaceCatAstrophe/SpaceCat1.png" alt="Project 2 Screenshot" class="project-image">
+                        <img src="Images/SpaceCatAstrophe/SpaceCat1.png" alt="Project 2 Screenshot" class="project-image">
                     </div>
                     <div class="project-image-container">
-                        <img src="../Images/SpaceCatAstrophe/SpaceCat2.png" alt="Project 2 Gameplay" class="project-image">
+                        <img src="Images/SpaceCatAstrophe/SpaceCat2.png" alt="Project 2 Gameplay" class="project-image">
                     </div>
                     <div class="project-image-container">
-                        <img src="../Images/SpaceCatAstrophe/SpaceCat3.png" alt="Project 2 UI" class="project-image">
+                        <img src="Images/SpaceCatAstrophe/SpaceCat3.png" alt="Project 2 UI" class="project-image">
                     </div>
                 </div>
                 <div class="project-details">
@@ -116,6 +143,20 @@
                             <li>Created the movement logic for both characters</li>
                             <li>Created the AI that would have a roam state, and a chase state</li>  
                             <li>Created the level design and objectives for the game</li>                      
+                        </ul>
+                    </div>
+
+                    <div class="project-contributions">
+                        <div class="contributions-title">Challenges Faced:</div>
+                        <ul class="contributions-list">
+                            <li>Implementing the 2D alien enemy AI with idle, patrol, and chase states</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-contributions">
+                        <div class="contributions-title">Outcome:</div>
+                        <ul class="contributions-list">
+                            <li>We finished the game jam on time, and with functional working AI</li>
                         </ul>
                     </div>
 
@@ -142,13 +183,13 @@
             <div class="project-card">
                 <div class="project-images">
                     <div class="project-image-container">
-                        <img src="../Images/PolyZomb/PolyZomb1.png" alt="PolyZomb: The Island 1 Screenshot" class="project-image">
+                        <img src="Images/PolyZomb/PolyZomb1.png" alt="PolyZomb: The Island 1 Screenshot" class="project-image">
                     </div>
                     <div class="project-image-container">
-                        <img src="../Images/PolyZomb/PolyZomb2.png" alt="PolyZomb: The Island 2 Screenshot" class="project-image">
+                        <img src="Images/PolyZomb/PolyZomb2.png" alt="PolyZomb: The Island 2 Screenshot" class="project-image">
                     </div>
                     <div class="project-image-container">
-                        <img src="../Images/PolyZomb/PolyZomb3.png" alt="PolyZomb: The Island 3 Screenshot" class="project-image">
+                        <img src="Images/PolyZomb/PolyZomb3.png" alt="PolyZomb: The Island 3 Screenshot" class="project-image">
                     </div>
                 </div>
                 <div class="project-details">
@@ -179,6 +220,22 @@
                         </ul>
                     </div>
 
+                    <div class="project-contributions">
+                        <div class="contributions-title">Challenges Faced:</div>
+                        <ul class="contributions-list">
+                            <li>Handling lots of different states such as the weapon inventory, weapon attachments, and weapon sway</li>
+                            <li>Handling item spawning and despawning for optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-contributions">
+                        <div class="contributions-title">Outcome:</div>
+                        <ul class="contributions-list">
+                            <li>I was able to learn a lot about optimization and handling lots of different complex states such as inventory management, weapon attachments, and weapon sway</li>
+                        </ul>
+                    </div>
+
+
                     <div class="project-tech">
                         <div class="tech-section">
                             <div class="tech-title">Languages Used</div>
@@ -204,10 +261,10 @@
             <div class="project-card">
                 <div class="project-images">
                     <div class="project-image-container">
-                        <img src="../Images/SimplifyC++/SimplifyC++1.png" alt="Simplify C++ 1 Screenshot" class="project-image">
+                        <img src="Images/SimplifyC++/SimplifyC++1.png" alt="Simplify C++ 1 Screenshot" class="project-image">
                     </div>
                     <div class="project-image-container">
-                        <img src="../Images/SimplifyC++/SimplifyC++2.png" alt="Simplify C++ 2 Screenshot" class="project-image">
+                        <img src="Images/SimplifyC++/SimplifyC++2.png" alt="Simplify C++ 2 Screenshot" class="project-image">
                     </div>
                 </div>
                 <div class="project-details">
@@ -228,6 +285,22 @@
                             <li>Worked on creating the functionality for switching between pages</li>
                         </ul>
                     </div>
+
+                    <div class="project-contributions">
+                        <div class="contributions-title">Challenges Faced:</div>
+                        <ul class="contributions-list">
+                            <li>My hack-a-thon group mates did not have any experience with web development</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-contributions">
+                        <div class="contributions-title">Outcome:</div>
+                        <ul class="contributions-list">
+                            <li>I was able to quickly teach my teammates the basics of web development</li>
+                            <li>We were able to finish the hack-a-thon on time, and with a functional website</li>
+                        </ul>
+                    </div>
+
 
                     <div class="project-tech">
                         <div class="tech-section">
@@ -254,10 +327,10 @@
             <div class="project-card">
                 <div class="project-images">
                     <div class="project-image-container">
-                        <img src="../Images/UppersWebsite/UpCafeBake1.png" alt="Uppers Website 1 Screenshot" class="project-image">
+                        <img src="Images/UppersWebsite/UpCafeBake1.png" alt="Uppers Website 1 Screenshot" class="project-image">
                     </div>
                     <div class="project-image-container">
-                        <img src="../Images/UppersWebsite/UpCafeBake2.png" alt="Uppers Website 2 Screenshot" class="project-image">
+                        <img src="Images/UppersWebsite/UpCafeBake2.png" alt="Uppers Website 2 Screenshot" class="project-image">
                     </div>
                 </div>
                 <div class="project-details">
@@ -292,6 +365,21 @@
                         </ul>
                     </div>
 
+                    <div class="project-contributions">
+                        <div class="contributions-title">Challenges Faced:</div>
+                        <ul class="contributions-list">
+                            <li>It was my first time building a professional website</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-contributions">
+                        <div class="contributions-title">Outcome:</div>
+                        <ul class="contributions-list">
+                            <li>I was able to build the website, and is currently used by the cafe</li>
+                        </ul>
+                    </div>
+
+
                     <div class="project-tech">
                         <div class="tech-section">
                             <div class="tech-title">Languages Used</div>
@@ -317,13 +405,13 @@
             <div class="project-card">
                 <div class="project-images">
                     <div class="project-image-container">
-                        <img src="../Images/KnightsQuest/KnightsQuest1.png" alt="Knights Quest 1 Screenshot" class="project-image">
+                        <img src="Images/KnightsQuest/KnightsQuest1.png" alt="Knights Quest 1 Screenshot" class="project-image">
                     </div>
                     <div class="project-image-container">
-                        <img src="../Images/KnightsQuest/KnightsQuest2.png" alt="Knights Quest 2 Gameplay" class="project-image">
+                        <img src="Images/KnightsQuest/KnightsQuest2.png" alt="Knights Quest 2 Gameplay" class="project-image">
                     </div>
                     <div class="project-image-container">
-                        <img src="../Images/KnightsQuest/KnightsQuest3.png" alt="Knights Quest 3 UI" class="project-image">
+                        <img src="Images/KnightsQuest/KnightsQuest3.png" alt="Knights Quest 3 UI" class="project-image">
                     </div>
                 </div>
                 <div class="project-details">
@@ -341,6 +429,20 @@
                             <li>Implemented the barrel spawn mechanic</li>
                             <li>Upon hit, barrel would destroy and drop an item</li>
                             <li>Added the swinging hammer weapon</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-contributions">
+                        <div class="contributions-title">Challenges Faced:</div>
+                        <ul class="contributions-list">
+                            <li>I was quite new to Unity at the time, and had to learn a lot of new concepts quickly</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-contributions">
+                        <div class="contributions-title">Outcome:</div>
+                        <ul class="contributions-list">
+                            <li>I was able to build the game, and by the end of the semester we had a fully functioning and enjoyable game</li>
                         </ul>
                     </div>
                     

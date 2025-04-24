@@ -12,20 +12,37 @@
     <script src="GabeScript.js"></script>
 </head>
 <body>
-    <div class="art-background">
-        <div class="background-image">
-            <img src="../Art/Sky.png" alt="Sky">
-        </div>
-        <div class="light-source">
-            <img src="../Art/Moon.png" alt="Moon">
-        </div>
-        <div class="stars">
-            <img src="../Art/Stars.png" alt="Stars">
-        </div>
-        <div class="mountains">
-            <img src="../Art/Mountains.png" alt="Mountains">
-        </div>
+    <!-- Dark mode elements -->
+    <div class="background dark-mode" style="z-index: 0;">
+        <img src="Art/DarkMode/BackgroundDark.png" alt="Dark Background">
     </div>
+    <div class="sky dark-mode" style="z-index: 1;">
+        <img src="Art/DarkMode/SkyDark.png" alt="Dark Sky">
+    </div>
+    <div class="terrain dark-mode" style="z-index: 2;">
+        <img src="Art/DarkMode/TerrainDark.png" alt="Dark Terrain">
+    </div>
+    
+    <!-- Light mode elements (initially hidden) -->
+    <div class="background light-mode" style="z-index: 0; display: none;">
+        <img src="Art/LightMode/BackgroundLight.png" alt="Light Background">
+    </div>
+    <div class="sky light-mode" style="z-index: 1; display: none;">
+        <img src="Art/LightMode/SkyLight.png" alt="Light Sky">
+    </div>
+    <div class="terrain light-mode" style="z-index: 2; display: none;">
+        <img src="Art/LightMode/TerrainLight.png" alt="Light Terrain">
+    </div>
+    
+    <!-- Decorative celestial objects - match sky display pattern -->
+    <div class="celestial-object moon" style="z-index: 1;">
+        <img src="Art/DarkMode/Moon.png" alt="Moon">
+    </div>
+    <div class="celestial-object sun" style="z-index: 1; display: none;">
+        <img src="Art/LightMode/Sun.png" alt="Sun">
+    </div>
+    <img src="Art/Gabe/StandingGabe.png" alt="Gabe" class="character" id="gabe">
+    
     <nav class="navbar">
         <nav class="nav-home">
             <a href="index.html">GG</a>
@@ -36,8 +53,13 @@
             <li><a href="skills.html">Skills</a></li>
             <li><a href="contact.html">Contact Me</a></li>
         </ul>
-    </nav>    
-    <div class="skills-container">
+        <!-- Mode toggle button integrated into navbar -->
+        <div class="mode-toggle dark">
+            <img id="mode-icon" src="Art/DarkMode/Moon.png" alt="Mode Toggle">
+        </div>
+    </nav>
+      
+    <div class="skills-container" style="position: relative; z-index: 20; margin-top: 100px;">
         <div class="text-title">Skills</div>
         <div class="skills-section">
             <h2 class="section-title">Programming Languages</h2>
@@ -62,7 +84,7 @@
                         <tr>
                             <td>C++</td>
                             <td></td>
-                            <td><img src="../Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
+                            <td><img src="Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
                             <td></td>
                             <td>3</td>
                             <td>First programming language and learned foundational core concepts and programming logic</td>
@@ -71,13 +93,13 @@
                             <td>C#</td>
                             <td></td>
                             <td></td>
-                            <td><img src="../Art/Advanced.png" alt="Advanced" class="proficiency-icon"></td>
+                            <td><img src="Art/Advanced.png" alt="Advanced" class="proficiency-icon"></td>
                             <td>4</td>
                             <td>Game Development - Unity</td>
                         </tr>
                         <tr>
                             <td>GDScript</td>
-                            <td><img src="../Art/Basic.png" alt="Basic" class="proficiency-icon"></td>
+                            <td><img src="Art/Basic.png" alt="Basic" class="proficiency-icon"></td>
                             <td></td>
                             <td></td>
                             <td>1</td>
@@ -86,7 +108,7 @@
                         <tr>
                             <td>HTML</td>
                             <td></td>
-                            <td><img src="../Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
+                            <td><img src="Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
                             <td></td>
                             <td>1.5</td>
                             <td>Web development, responsive design</td>
@@ -94,14 +116,14 @@
                         <tr>
                             <td>CSS</td>
                             <td></td>
-                            <td><img src="../Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
+                            <td><img src="Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
                             <td></td>
                             <td>1.5</td>
                             <td>Styling, animations</td>
                         </tr>
                         <tr>
                             <td>Python</td>
-                            <td><img src="../Art/Basic.png" alt="Basic" class="proficiency-icon"></td>
+                            <td><img src="Art/Basic.png" alt="Basic" class="proficiency-icon"></td>
                             <td></td>
                             <td></td>
                             <td>1</td>
@@ -109,7 +131,7 @@
                         </tr>
                         <tr>
                             <td>React</td>
-                            <td><img src="../Art/Basic.png" alt="Basic" class="proficiency-icon"></td>
+                            <td><img src="Art/Basic.png" alt="Basic" class="proficiency-icon"></td>
                             <td></td>
                             <td></td>
                             <td>0.5</td>
@@ -139,14 +161,14 @@
                         <tr>
                             <td>Github</td>
                             <td></td>
-                            <td><img src="../Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
+                            <td><img src="Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
                             <td></td>
                             <td>Version control & collaboration</td>
                         </tr>
                         <tr>
                             <td>Git</td>
                             <td></td>
-                            <td><img src="../Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
+                            <td><img src="Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
                             <td></td>
                             <td>Version control, collaborative development</td>
                         </tr>
@@ -154,19 +176,19 @@
                             <td>Unity</td>
                             <td></td>
                             <td></td>
-                            <td><img src="../Art/Advanced.png" alt="Advanced" class="proficiency-icon"></td>
+                            <td><img src="Art/Advanced.png" alt="Advanced" class="proficiency-icon"></td>
                             <td>Game development, 3D modeling, physics</td>
                         </tr>
                         <tr>
                             <td>Visual Studio</td>
                             <td></td>
                             <td></td>
-                            <td><img src="../Art/Advanced.png" alt="Advanced" class="proficiency-icon"></td>
+                            <td><img src="Art/Advanced.png" alt="Advanced" class="proficiency-icon"></td>
                             <td>Primary IDE for C# development</td>
                         </tr>
                         <tr>
                             <td>Godot</td>
-                            <td><img src="../Art/Basic.png" alt="Basic" class="proficiency-icon"></td>
+                            <td><img src="Art/Basic.png" alt="Basic" class="proficiency-icon"></td>
                             <td></td>
                             <td></td>
                             <td>2D game development</td>
@@ -175,26 +197,26 @@
                             <td>Gitub Desktop</td>
                             <td></td>
                             <td></td>
-                            <td><img src="../Art/Advanced.png" alt="Advanced" class="proficiency-icon"></td>
+                            <td><img src="Art/Advanced.png" alt="Advanced" class="proficiency-icon"></td>
                             <td>Used for simple repo sync</td>
                         </tr>
                         <tr>
                             <td>GitHub Kraken</td>
                             <td></td>
                             <td></td>
-                            <td><img src="../Art/Advanced.png" alt="Advanced" class="proficiency-icon"></td>
+                            <td><img src="Art/Advanced.png" alt="Advanced" class="proficiency-icon"></td>
                             <td>Used for more complex repo sizes</td>
                         </tr>
                         <tr>
                             <td>Adobe Photoshop</td>
                             <td></td>
-                            <td><img src="../Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
+                            <td><img src="Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
                             <td></td>
                             <td>Asset creation, UI design</td>
                         </tr>
                         <tr>
                             <td>Blender</td>
-                            <td><img src="../Art/Basic.png" alt="Basic" class="proficiency-icon"></td>
+                            <td><img src="Art/Basic.png" alt="Basic" class="proficiency-icon"></td>
                             <td></td>
                             <td></td>
                             <td>3D modeling and animation</td>
@@ -202,7 +224,7 @@
                         <tr>
                             <td>Figma</td>
                             <td></td>
-                            <td><img src="../Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
+                            <td><img src="Art/Intermediate.png" alt="Intermediate" class="proficiency-icon"></td>
                             <td></td>
                             <td>UI design</td>
                         </tr>

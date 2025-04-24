@@ -1,39 +1,31 @@
-.art-background {
+/* Common styles for all scene elements */
+.background, .sky, .terrain {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
-}
-.background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
 }
 
-.background-image img {
+.background img, .sky img, .terrain img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    width: 100vw;    /* viewport width */
-    height: 100vh;   /* viewport height */
-    z-index: -1;
     object-fit: cover;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 }
 
-.light-source {
+/* Celestial objects (sun and moon) */
+.celestial-object {
     position: fixed;
     top: 20%;
     right: 20%;
-    z-index: 1000;
+    z-index: 1;
+    will-change: transform, opacity;
 }
 
-.light-source img {
-    z-index: 1000;
+.celestial-object img {
     width: 128px;
     height: 128px;
     image-rendering: pixelated;
@@ -41,34 +33,61 @@
     image-rendering: crisp-edges;
 }
 
-.mountains {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* Animation classes */
+.slide-down {
+    animation: slideDown 1.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
 }
 
-.mountains img {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
+.slide-up {
+    animation: slideUp 1.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
 }
 
-.stars {
-    position: fixed;
-    top: 0;
-    left: 0;
+.fade-in {
+    animation: fadeIn 1.5s ease forwards;
 }
 
-.stars img {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
+.fade-out {
+    animation: fadeOut 1.5s ease forwards;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .character {
@@ -81,5 +100,5 @@
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
-    z-index: 1; 
+    z-index: 10; 
 }

@@ -10,19 +10,37 @@
     <script src="GabeScript.js"></script>
 </head>
 <body>
-    <div class="background-image">
-        <img src="../Art/Sky.png" alt="Sky">
+    <!-- Dark mode elements -->
+    <div class="background dark-mode" style="z-index: 0;">
+        <img src="Art/DarkMode/BackgroundDark.png" alt="Dark Background">
     </div>
-    <div class="light-source">
-        <img src="../Art/Moon.png" alt="Moon">
+    <div class="sky dark-mode" style="z-index: 1;">
+        <img src="Art/DarkMode/SkyDark.png" alt="Dark Sky">
     </div>
-    <div class="stars">
-        <img src="../Art/Stars.png" alt="Stars">
+    <div class="terrain dark-mode" style="z-index: 2;">
+        <img src="Art/DarkMode/TerrainDark.png" alt="Dark Terrain">
     </div>
-    <div class="mountains">
-        <img src="../Art/Mountains.png" alt="Mountains">
+    
+    <!-- Light mode elements (initially hidden) -->
+    <div class="background light-mode" style="z-index: 0; display: none;">
+        <img src="Art/LightMode/BackgroundLight.png" alt="Light Background">
+    </div>
+    <div class="sky light-mode" style="z-index: 1; display: none;">
+        <img src="Art/LightMode/SkyLight.png" alt="Light Sky">
+    </div>
+    <div class="terrain light-mode" style="z-index: 2; display: none;">
+        <img src="Art/LightMode/TerrainLight.png" alt="Light Terrain">
+    </div>
+    
+    <!-- Decorative celestial objects - match sky display pattern -->
+    <div class="celestial-object moon" style="z-index: 1;">
+        <img src="Art/DarkMode/Moon.png" alt="Moon">
+    </div>
+    <div class="celestial-object sun" style="z-index: 1; display: none;">
+        <img src="Art/LightMode/Sun.png" alt="Sun">
     </div>
     <img src="../Art/Gabe/StandingGabe.png" alt="Gabe" class="character" id="gabe">
+
     <nav class="navbar">
         <nav class="nav-home">
             <a href="index.html">GG</a>
@@ -33,12 +51,17 @@
             <li><a href="skills.html">Skills</a></li>
             <li><a href="contact.html">Contact Me</a></li>
         </ul>
+        <!-- Mode toggle button integrated into navbar -->
+        <div class="mode-toggle dark">
+            <img id="mode-icon" src="Art/DarkMode/Moon.png" alt="Mode Toggle">
+        </div>
     </nav>
 
     <div class="titleHolder">
         <h1 class="titleName">Gabrielius Gintalas - Game Developer</h1>
-        <p class="titleQuip">Building world's</p>
-        <p class="titleQuip">one bug fix at a time</p>
+        <p class="titleQuip">Building world's one bug fix at a time</p>
+        <p class="text-common">I'm a game developer with a passion for creating fun and engaging games</p>
+        
     </div>
 </body>
 </html>
